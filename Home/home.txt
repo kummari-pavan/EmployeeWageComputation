@@ -1,0 +1,16 @@
+Home Branch Documentation - Employee Wage Computation Project:
+-------------------------------------------------------------
+The Home Branch of the Employee Wage Computation Project is the foundational part of the program. It introduces users to the core idea and provides a welcoming start to the application. Here’s an overview of what this branch includes:
+
+Welcome Message:
+---------------
+The home branch starts with a simple, user-friendly interface that displays a welcome message: "Welcome to Employee Wage Computation Program".
+This message serves as the entry point for users, making it clear what the application is about.
+Basic Design:
+
+The page is styled with a modern design, featuring a clean layout with an attractive background and a welcoming color scheme. This ensures the user has a pleasant experience right from the start.
+Key elements such as the welcome message are emphasized with visually appealing text styles and a background color.
+Initial Structure:
+
+At this stage, no complex functionality is included. It focuses purely on introducing the project and setting the groundwork for the upcoming use cases.
+All future features and computations will be built on top of this foundation, making it the main starting point for the entire project.
