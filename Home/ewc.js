@@ -1,5 +1,10 @@
 console.log("Master Branch")
-// UC 1: Check if Employee is Present or Absent
+
+const WAGE_PER_HOUR = 20;
+const FULL_DAY_HOUR = 8;
+const PART_TIME_HOUR = 4;
+
+// Use Case 1:- Check if Employee is Present or Absent 
 function checkEmployeeAttendance() {
     const IS_PRESENT = 1;
     let attendance = Math.floor(Math.random() * 2);
@@ -9,18 +14,21 @@ function checkEmployeeAttendance() {
         console.log("Employee is Absent");
     }
 }
-
-// Call the function
 checkEmployeeAttendance();
 
-// UC 2: Calculate Daily Employee Wage
-const WAGE_PER_HOUR = 20;
-const FULL_DAY_HOUR = 8;
 
+// UC 2: Calculate Daily Employee Wage
 function calculateDailyWage() {
     let dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
     console.log("Daily Employee Wage: " + dailyWage);
 }
-
-// Call the function
 calculateDailyWage();
+
+
+// Use Case-3  Add Part-Time Employee & Wage Calculation
+function calculatePartTimeWage() {
+    let partTimeWage = WAGE_PER_HOUR * PART_TIME_HOUR;
+    console.log("Part-Time Employee Wage: " + partTimeWage);
+}
+calculatePartTimeWage();
+
