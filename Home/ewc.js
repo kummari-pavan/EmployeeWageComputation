@@ -65,3 +65,79 @@ function calculateMonthlyWage(callback) {
 
 }
 calculateMonthlyWage(checkEmployeeAttendance);
+
+
+//UC 6: Calculate Wages Till Condition Reached
+function computeEmployeeWage() {
+    const PART_TIME = 1;
+    const FULL_TIME = 2;
+    const WAGE_PER_HR = 20;
+    const MAX_WORKING_DAYS = 20;
+    const MAX_WORKING_HRS = 100;
+
+    let totalWage = 0;
+    let totalWorkingHrs = 0;
+    let totalWorkingDays = 0;
+
+    console.log("Day |  Workinghrs |  Wage |  Total working hrs");
+    console.log("____   __________   ______   _________________");
+
+
+    while (totalWorkingDays < MAX_WORKING_DAYS && totalWorkingHrs < MAX_WORKING_HRS) {
+        totalWorkingDays++;
+
+        let empType = Math.floor(Math.random() * 3);
+        let workingHrs = 0;
+
+        switch (empType) {
+            case FULL_TIME:
+                workingHrs = 8;
+                break;
+            case PART_TIME:
+                workingHrs = 4;
+                break;
+            default:
+                workingHrs = 0;
+                break;
+        }
+
+        if (totalWorkingHrs + workingHrs > MAX_WORKING_HRS) {
+            workingHrs = MAX_WORKING_HRS - totalWorkingHrs;
+        }
+
+        totalWorkingHrs += workingHrs;
+        let wage = workingHrs * WAGE_PER_HR;
+        totalWage += wage;
+
+        console.log(`${totalWorkingDays}    |   ${workingHrs}    |   ${wage}    |   ${totalWorkingHrs}`);
+    }
+
+    console.log("Total wage for a month is " + totalWage);
+    console.log("Total working days: " + totalWorkingDays);
+    console.log("Total working hours: " + totalWorkingHrs)
+}
+
+computeEmployeeWage();
+
+// ${totalWorkingDays}: This displays the current day in the wage calculation loop. It tells you on which day the work is being computed.
+
+// ${workingHrs}: This shows the number of hours worked on that particular day (either 0, 4, or 8 based on the employee type: full-time, part-time, or absent).
+
+// ${wage}: This gives the wage for that day, which is calculated by multiplying the number of working hours by the wage per hour (WAGE_PER_HR).
+
+// ${totalWorkingHrs}: This shows the cumulative total hours worked so far, after adding the working hours for the current day.
+
+//Output=>
+
+// Day  | Workinghrs |  Wage  |  Total working hrs
+// ____   __________   ______   _________________
+// 1    |   8        |  160   |     8
+// 2    |   4        |  80    |    12
+// 3    |   0        |   0    |    12
+// 4    |   8        |  160   |    20
+// 5    |   4        |  80    |    24
+
+
+// Total wage for a month is 480
+// Total working days: 5
+// Total working hours: 24
