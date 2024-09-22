@@ -3,6 +3,7 @@ console.log("Master Branch")
 const WAGE_PER_HOUR = 20;
 const FULL_DAY_HOUR = 8;
 const PART_TIME_HOUR = 4;
+const WORKING_DAYS_IN_MONTH = 20;
 
 // Use Case 1:- Check if Employee is Present or Absent 
 function checkEmployeeAttendance() {
@@ -10,9 +11,11 @@ function checkEmployeeAttendance() {
     let attendance = Math.floor(Math.random() * 2);
     if (attendance === IS_PRESENT) {
         console.log("Employee is Present");
-    } else {
+    } 
+    else {
         console.log("Employee is Absent");
     }
+    return attendance;
 }
 checkEmployeeAttendance();
 
@@ -50,3 +53,15 @@ function calculateWageUsingSwitch() {
     console.log("Employee Wage using Switch Case: " + empWage);
 }
 calculateWageUsingSwitch();
+
+
+// UC 5: Calculate Wages for a Month
+function calculateMonthlyWage(callback) {
+    let attendance = callback();
+    if(attendance===1){
+        let totalWage = WAGE_PER_HOUR * FULL_DAY_HOUR * WORKING_DAYS_IN_MONTH;
+        console.log("Monthly Employee Wage: " + totalWage);
+    }
+
+}
+calculateMonthlyWage(checkEmployeeAttendance);
