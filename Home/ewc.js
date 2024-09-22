@@ -32,3 +32,21 @@ function calculatePartTimeWage() {
 }
 calculatePartTimeWage();
 
+// Use Case-4 Solving Using Switch Case
+function getWorkingHours(empCheck) {
+    switch(empCheck) {
+        case 1:
+            return FULL_TIME_HOUR;
+        case 2:
+            return PART_TIME_HOUR_UC4;
+        default:
+            return 0;
+    }
+}
+function calculateWageUsingSwitch() {
+    let empCheck = Math.floor(Math.random() * 3); // i'm defining the Random value between 0, 1, 2
+    let hoursWorked = getWorkingHours(empCheck);
+    let empWage = hoursWorked * WAGE_PER_HOUR_UC4;
+    console.log("Employee Wage using Switch Case: " + empWage);
+}
+calculateWageUsingSwitch();
