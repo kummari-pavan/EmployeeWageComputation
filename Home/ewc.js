@@ -103,7 +103,7 @@ function computeEmployeeWage() {
 
         if (totalWorkingHrs + workingHrs > MAX_WORKING_HRS) {
             workingHrs = MAX_WORKING_HRS - totalWorkingHrs;
-        }
+        } // ensure that the total working hours do not exceed the maximum allowed working hours (which is MAX_WORKING_HRS = 100).
 
         totalWorkingHrs += workingHrs;
         let wage = workingHrs * WAGE_PER_HR;
