@@ -59,5 +59,6 @@ class EmployeeWageComputation {
 }
 
 // Instantiate the class and compute the wage
+
 const employeeWage = new EmployeeWageComputation();
 employeeWage.computeEmployeeWage();
